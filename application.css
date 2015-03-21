@@ -1,0 +1,17 @@
+@import('normalize.css');
+
+body {
+    background: #000000;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+}
+
+video {
+    height: 100%;
+    width: 100%;
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+}
