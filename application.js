@@ -1,6 +1,6 @@
 $( document ).ready(function() {
 
-    var puppies = ['2m78jPG', 'pn1e9TO', 'MQCIwzT', 'udLK6FS', 'ZNem5o3', 'DS2IZ6K', 'aydRUz8', 'MVUdQYK', 'kLvno0p', 'QTAa2BV', 'wScLiVz', 'Z0TII8i', 'F1SChho', '9hRi2jN', 'lvzRF3W', 'fqHxOGI', '1xeUYme', '6tVqKyM', 'CCxZ6Wr', 'lMW0OPQ', 'wHVpHVG', 'Wj2PGRl', 'HlaTE8H', 'k5jALH0', '3V37Hqr', 'Eq2uMTA', 'Vy9JShx', 'g9I2ZmK', 'Nu4RH7f', 'sWp0Dqd', 'bRKfspn', 'qawCMl5', '2F6j2B4', 'MjtiJQX', 'fiJxCVA', 'pCAIlxD', 'zJx2skh', '9EPRfmC', '2Gdl1u7', 'aJJAY4c', 'ros6RLC', 'DKLBJh7', 'eyxH0Wc', 'rJEkEw4', 'Fawbxgh', 'bDYdPSV', 'Qnf8N', 'UdGqAqy', 'ZproAeR', 'O5mnnZa', 'B0Myq5r', 'Jh3QRKx', 'iwe1n1K', '4r6dbiO', 'PxInrJd', 'T6nEhIE', 'j8fxNyL'];
+    var puppies = ['2m78jPG', 'pn1e9TO', 'MQCIwzT', 'udLK6FS', 'ZNem5o3', 'DS2IZ6K', 'aydRUz8', 'MVUdQYK', 'kLvno0p', 'QTAa2BV', 'wScLiVz', 'Z0TII8i', 'F1SChho', '9hRi2jN', 'lvzRF3W', 'fqHxOGI', '1xeUYme', '6tVqKyM', 'CCxZ6Wr', 'lMW0OPQ', 'wHVpHVG', 'Wj2PGRl', 'HlaTE8H', 'k5jALH0', '3V37Hqr', 'Eq2uMTA', 'Vy9JShx', 'g9I2ZmK', 'Nu4RH7f', 'sWp0Dqd', 'bRKfspn', 'qawCMl5', '2F6j2B4', 'MjtiJQX', 'fiJxCVA', 'pCAIlxD', 'zJx2skh', '9EPRfmC', '2Gdl1u7', 'aJJAY4c', 'ros6RLC', 'DKLBJh7', 'eyxH0Wc', 'rJEkEw4', 'Fawbxgh', 'bDYdPSV', 'Qnf8N', 'UdGqAqy', 'ZproAeR', 'O5mnnZa', 'B0Myq5r', 'Jh3QRKx', 'iwe1n1K', '4r6dbiO', 'PxInrJd', 'T6nEhIE', 'j8fxNyL', '1SSVsBH'];
     var lastPuppy;
 
     function pickUpPuppy() {
