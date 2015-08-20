@@ -29,8 +29,11 @@ function playPuppies(puppies) {
     }
 
     function loadPuppy() {
-        $('#puppy > source').attr('src', newPuppy());
+        var newPup = newPuppy();
+        $('#puppy > source').attr('src', newPup);
+        $('.permalink a').attr('href', newPup);
         // console.log($('#puppy > source').attr('src'));
+        $('.permalink').load();
         $('#puppy').load();
     }
 
