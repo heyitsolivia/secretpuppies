@@ -3,7 +3,7 @@
 Woof! This is a curated collection of adorable puppies on the internet being adorable. It is actually totally open but we're calling it secretpuppies because irony.
 
 ## Thumbs Up
-If you also thinking **YES** like @melodykramer, you too can leave a :thumbsup: on this issue to express your general approval of this project: [https://github.com/heyitsolivia/secretpuppies/issues/12](https://github.com/heyitsolivia/secretpuppies/issues/12)
+If you're also thinking **YES** like @melodykramer, you too can leave a :thumbsup: on this issue to express your general approval of this project: [https://github.com/heyitsolivia/secretpuppies/issues/12](https://github.com/heyitsolivia/secretpuppies/issues/12)
 
 ## Install
 1. Clone this project.
