@@ -41,7 +41,7 @@ function playPuppies(puppies) {
     function showPuppy(newPup) {
         var url = makeURL(newPup);
         $('#puppy > source').attr('src', url);
-        $('.permalink a').attr('href', url);
+        $('.permalink').attr('href', url);
         $('#puppy').load();
 
     }
