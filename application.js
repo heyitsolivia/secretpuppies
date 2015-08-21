@@ -16,7 +16,7 @@ function playPuppies(puppies) {
     }
 
     function makeURL(newPup) {
-        return 'http://i.imgur.com/' + newPup + '.mp4';
+        return 'https://i.imgur.com/' + newPup + '.mp4';
     }
 
     function newPuppy() {
