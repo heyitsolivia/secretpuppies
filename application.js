@@ -3,7 +3,7 @@ $(document).ready(function() {
 });
 
 function playPuppies(puppies) {
-    var lastPuppy;
+    var puppies_seen = [];
     var keycodes = {
         spacebar: 32,
         left_arrow: 37,
@@ -15,45 +15,68 @@ function playPuppies(puppies) {
       return puppies[Math.floor(Math.random() * puppyCount)];
     }
 
-
-    function newPuppy() {
-        var newPup = pickUpPuppy();
-        while (lastPuppy == newPup) {
-            var newPup = pickUpPuppy();
-        }
-
-        lastPuppy = newPup;
-        return newPup;
-    }
-
     function makeURL(newPup) {
         return 'http://i.imgur.com/' + newPup + '.mp4';
     }
 
-    function loadPuppy(newPup) {
+    function newPuppy() {
+
+        if (puppies_seen.length == puppies.length) {
+            console.log("Ran out of puppies. What should I do?");
+            var current_pup = puppies_seen[puppies_seen.length - 1];
+            puppies_seen = [current_pup]; // for now reset but don't repeat what we have
+        }
+
+        var newPup = pickUpPuppy();
+
+        while (puppies_seen.indexOf(newPup) != -1) {
+            newPup = pickUpPuppy();
+        }
+
+        puppies_seen.push(newPup);
+        return  newPup;
+
+    }
+
+    function showPuppy(newPup) {
         var url = makeURL(newPup);
         $('#puppy > source').attr('src', url);
         $('.permalink a').attr('href', url);
         $('#puppy').load();
-        history.pushState({pup: newPup}, '', '#' + newPup);
+
+    }
+
+    function loadPuppy(pup) {
+        showPuppy(pup)
+        history.pushState({pup: pup}, '', '#' + pup);
+    }
+
+    function initialPuppy(pup) {
+        showPuppy(pup);
+        history.replaceState({pup: pup}, '', '#' + pup);
     }
 
     $(document).keyup(function(evt) {
-        if (evt.keyCode == keycodes.spacebar || evt.keyCode == keycodes.right_arrow) { // right arrow should probably go forward, but not sure how to know we're at the end of the history stack
+        if (evt.keyCode == keycodes.spacebar) {
             var newPup = newPuppy();
             loadPuppy(newPup);
         } else if (evt.keyCode == keycodes.left_arrow) {
             history.back();
+        } else if (evt.keyCode == keycodes.right_arrow) {
+            history.forward();
         }
     });
 
     window.addEventListener('popstate', function(e) {
-        loadPuppy(e.state.pup);
+        if (e.state && e.state.pup) {
+            showPuppy(e.state.pup);
+        }
     })
 
     var initial_pup = window.location.hash.substring(1);
-    if (puppies.indexOf(initial_pup) == -1) {
-        initial_pup = newPuppy();
+    if (puppies.indexOf(initial_pup) != -1) {
+        initialPuppy(initial_pup);
+    } else {
+        initialPuppy(newPuppy());
     }
-    loadPuppy(initial_pup);
 }
