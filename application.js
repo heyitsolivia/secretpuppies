@@ -3,7 +3,7 @@ $(document).ready(function() {
 });
 
 function playPuppies(puppies) {
-    var lastPuppy;
+    var puppies_seen = [];
 
     function pickUpPuppy() {
       var puppyCount = puppies.length;
@@ -12,20 +12,22 @@ function playPuppies(puppies) {
 
 
     function newPuppy() {
-        if (lastPuppy) {
-            var newPup = pickUpPuppy();
-            while (lastPuppy == newPup) {
-                var newPup = pickUpPuppy();
-            }
 
-            lastPuppy = newPup;
-            return 'http://i.imgur.com/' + newPup + '.mp4';
-        } else {
-            var pup = pickUpPuppy();
-
-            lastPuppy = pup;
-            return 'http://i.imgur.com/' + pup + '.mp4';
+        if (puppies_seen.length == puppies.length) {
+            console.log("Ran out of puppies. What should I do?");
+            var current_pup = puppies_seen[puppies_seen.length - 1];
+            puppies_seen = [current_pup]; // for now reset but don't repeat what we have
         }
+
+        var newPup = pickUpPuppy();
+
+        while (puppies_seen.indexOf(newPup) != -1) {
+            newPup = pickUpPuppy();
+        }
+
+        puppies_seen.push(newPup);
+        return 'http://i.imgur.com/' + newPup + '.mp4';
+
     }
 
     function loadPuppy() {
