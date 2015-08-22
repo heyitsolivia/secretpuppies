@@ -5,10 +5,19 @@ $(document).ready(function() {
 function playPuppies(puppies) {
     var puppies_seen = [];
     var ask_about_adoption_after_x_puppies = 20;
+    var keycodes = {
+        spacebar: 32,
+        left_arrow: 37,
+        right_arrow: 39
+    }
 
     function pickUpPuppy() {
       var puppyCount = puppies.length;
       return puppies[Math.floor(Math.random() * puppyCount)];
+    }
+
+    function makeURL(newPup) {
+        return 'https://i.imgur.com/' + newPup + '.mp4';
     }
 
     function newPuppy() {
@@ -24,7 +33,7 @@ function playPuppies(puppies) {
         }
 
         puppies_seen.push(newPup);
-        return 'http://i.imgur.com/' + newPup + '.mp4';
+        return  newPup;
 
     }
 
@@ -60,19 +69,47 @@ function playPuppies(puppies) {
         $('.permalink a').attr('href', newPup);
         // console.log($('#puppy > source').attr('src'));
         $('.permalink').load();
+    }
+
+    function showPuppy(newPup) {
+        var url = makeURL(newPup);
+        $('#puppy > source').attr('src', url);
+        $('.permalink').attr('href', url);
         $('#puppy').load();
+
     }
 
-    function loadNewPuppy() {
-        var spacebar = 32;
-
-        $(document).keyup(function(evt) {
-            if (evt.keyCode == spacebar) {
-                loadPuppy();
-            }
-        });
+    function loadPuppy(pup) {
+        showPuppy(pup)
+        history.pushState({pup: pup}, '', '#' + pup);
     }
 
-    loadPuppy();
-    loadNewPuppy();
+    function initialPuppy(pup) {
+        showPuppy(pup);
+        history.replaceState({pup: pup}, '', '#' + pup);
+    }
+
+    $(document).keyup(function(evt) {
+        if (evt.keyCode == keycodes.spacebar) {
+            var newPup = newPuppy();
+            loadPuppy(newPup);
+        } else if (evt.keyCode == keycodes.left_arrow) {
+            history.back();
+        } else if (evt.keyCode == keycodes.right_arrow) {
+            history.forward();
+        }
+    });
+
+    window.addEventListener('popstate', function(e) {
+        if (e.state && e.state.pup) {
+            showPuppy(e.state.pup);
+        }
+    })
+
+    var initial_pup = window.location.hash.substring(1);
+    if (puppies.indexOf(initial_pup) != -1) {
+        initialPuppy(initial_pup);
+    } else {
+        initialPuppy(newPuppy());
+    }
 }

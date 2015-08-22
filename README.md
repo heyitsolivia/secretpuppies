@@ -5,6 +5,10 @@ Woof! This is a curated collection of adorable puppies on the internet being ado
 ## Thumbs Up
 If you're also thinking **YES** like @melodykramer, you too can leave a :thumbsup: on this issue to express your general approval of this project: [https://github.com/heyitsolivia/secretpuppies/issues/12](https://github.com/heyitsolivia/secretpuppies/issues/12)
 
+## Add a puppy!
+If you found a puppy gif and you think it needs to live here (because where else), just [follow these steps](https://github.com/heyitsolivia/secretpuppies/blob/master/CONTRIBUTE.md)!
+
+
 ## Install
 1. Clone this project.
 2. cd into the repo and start a server ([http-server](https://www.npmjs.com/package/http-server) works pretty good.)

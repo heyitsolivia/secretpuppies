@@ -7,17 +7,19 @@
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
+      ga('set', 'forceSSL', true);
+      ga('set', 'anonymizeIP', true);
       ga('create', 'UA-37079640-2', 'auto');
       ga('send', 'pageview');
     </script>
-    <link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
     <video id="puppy" autoplay loop>
-        <source src="http://i.imgur.com/2m78jPG.mp4" type="video/mp4">
+        <source src="https://i.imgur.com/2m78jPG.mp4" type="video/mp4">
     </video>
     <div class="permalink">
         <a href="#">Permalink</a>
@@ -25,9 +27,9 @@
     <div id="adoptionInfo">
         <div id="adoptionContainer">
             <p class="adoptionText">
-              Want to bring a puppy into your life?
-              <br>
-              Put in your ZIP code to find nearby shelters!
+                Want to bring a puppy into your life?
+                <br>
+                Put in your ZIP code to find nearby shelters!
             </p>
             <form id="adoptionForm" class="adoptionText" action="https://www.petfinder.com/animal-shelters-and-rescues/search/" method="GET" autocomplete="off" novalidate>
                 <input class="adoptionText" type="text" onkeypress="return (event.charCode == 13 || (event.charCode > 47 && event.charCode < 58));" name="location" id="location">
@@ -36,7 +38,13 @@
             </form>
         </div>
     </div>
-    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+    <footer class="footer">
+        <a class="right" href="https://twitter.com/heyits0livia"><svg class="geomicon" width="12px" viewBox="0 0 32 32" style="fill:#color"><title>twitter</title><path d="M2 4 C6 8 10 12 15 11 A6 6 0 0 1 22 4 A6 6 0 0 1 26 6 A8 8 0 0 0 31 4 A8 8 0 0 1 28 8 A8 8 0 0 0 32 7 A8 8 0 0 1 28 11 A18 18 0 0 1 10 30 A18 18 0 0 1 0 27 A12 12 0 0 0 8 24 A8 8 0 0 1 3 20 A8 8 0 0 0 6 19.5 A8 8 0 0 1 0 12 A8 8 0 0 0 3 13 A8 8 0 0 1 2 4"></path></svg></a>
+        <a class="right" href="https://github.com/heyitsolivia/secretpuppies/graphs/contributors">Made by these fine folks</a>
+        <a class="right" href="https://github.com/heyitsolivia/secretpuppies/blob/master/CONTRIBUTE.md">Add a puppy</a>
+        <a class="right permalink" href="#">Get this GIF</a>
+    </footer>
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script src="application.js"></script>
 </body>
