@@ -7,7 +7,8 @@ function playPuppies(puppies) {
     var keycodes = {
         spacebar: 32,
         left_arrow: 37,
-        right_arrow: 39
+        right_arrow: 39,
+        k: 75
     }
 
     function pickUpPuppy() {
@@ -64,6 +65,10 @@ function playPuppies(puppies) {
             history.back();
         } else if (evt.keyCode == keycodes.right_arrow) {
             history.forward();
+        } else if (evt.keyCode == keycodes.k) {
+            $.getJSON('kittens.json', function(data) {
+              puppies = data;
+            });
         }
     });
 
