@@ -17,18 +17,18 @@ video {
     -webkit-transform: scale(1.2);
 }
 
-.links {
-    position: absolute;
+.footer {
+    position: fixed;
     bottom: 0;
     width: 100%;
     height: 25px;
     background-color: #000;
 }
 
-.links a {
-    display: inline-block;
+.footer a {
+    float: left;
     padding: 5px 10px;
-    color: #fff;
+    color: #aaa;
     font-size: 10px;
     text-decoration: none;
     background-color: #000;
@@ -36,8 +36,19 @@ video {
     transition: background 200ms;
 }
 
-.links a:hover {
+.footer a.right {
+    float: right;
+}
+
+.footer a:hover {
     background-color: #fff;
     opacity: 0.5;
     color: #444;
+}
+
+.geomicon {
+    fill: #999;
+}
+.geomicon:hover {
+    fill: #000;
 }
