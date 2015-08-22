@@ -55,9 +55,9 @@ video {
     opacity: 0.9;
 }
 
-#adoptionForm {
+#adoptionContainer {
     width: 90%;
-    margin: 5% auto;
+    margin: auto;
 }
 
 .adoptionText {

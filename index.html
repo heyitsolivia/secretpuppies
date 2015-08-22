@@ -23,15 +23,18 @@
         <a href="#">Permalink</a>
     </div>
     <div id="adoptionInfo">
-        <form id="adoptionForm" class="adoptionText" action="https://www.petfinder.com/animal-shelters-and-rescues/search/" method="GET" autocomplete="off" novalidate>
-            Want to bring a puppy into your life?
-            <br>
-            Put in your ZIP code to find nearby shelters!
-            <br>
-            <input class="adoptionText" type="text" onkeypress="return (event.charCode == 13 || (event.charCode > 47 && event.charCode < 58));" name="location" id="location">
-            <input class="adoptionText adoptionButton" type="submit" value="Search!">
-            <button class="adoptionText adoptionButton" type="button" onclick='document.getElementById("adoptionInfo").style.visibility = "hidden";'>No thanks…</button>
-        </form>
+        <div id="adoptionContainer">
+            <p class="adoptionText">
+              Want to bring a puppy into your life?
+              <br>
+              Put in your ZIP code to find nearby shelters!
+            </p>
+            <form id="adoptionForm" class="adoptionText" action="https://www.petfinder.com/animal-shelters-and-rescues/search/" method="GET" autocomplete="off" novalidate>
+                <input class="adoptionText" type="text" onkeypress="return (event.charCode == 13 || (event.charCode > 47 && event.charCode < 58));" name="location" id="location">
+                <input class="adoptionText adoptionButton" type="submit" value="Search!">
+                <button class="adoptionText adoptionButton" type="button" onclick='document.getElementById("adoptionInfo").style.visibility = "hidden";'>No thanks…</button>
+            </form>
+        </div>
     </div>
     <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js"></script>

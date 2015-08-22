@@ -11,7 +11,6 @@ function playPuppies(puppies) {
       return puppies[Math.floor(Math.random() * puppyCount)];
     }
 
-
     function newPuppy() {
 
         if (puppies_seen.length == ask_about_adoption_after_x_puppies) {
