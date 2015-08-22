@@ -43,3 +43,31 @@ video {
 .permalink:hover a {
     color: #444;
 }
+
+#adoptionInfo {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    opacity: 0.9;
+}
+
+#adoptionForm {
+    width: 90%;
+    margin: 5% auto;
+}
+
+.adoptionText {
+    font-family: 'Noto Sans', Helvetica, sans-serif;
+    font-size: 70px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.adoptionButton {
+    color: #fff;
+    background-color: #606060;
+}
