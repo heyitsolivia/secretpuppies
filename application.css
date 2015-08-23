@@ -8,6 +8,7 @@ body {
     position: absolute;
     width: 100%;
     font-family: 'Noto Sans', Helvetica, sans-serif;
+    cursor: pointer;
 }
 
 video {
@@ -15,6 +16,26 @@ video {
     width: 100%;
     transform: scale(1.2);
     -webkit-transform: scale(1.2);
+}
+
+#puppygif {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+}
+
+@media all and (orientation:portrait) {
+    #puppygif {
+        width: 100%;
+    }
+}
+@media all and (orientation:landscape) {
+    #puppygif {
+        height: 100%;
+    }
 }
 
 .footer {
