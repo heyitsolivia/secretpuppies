@@ -79,13 +79,13 @@ video {
 }
 
 #adoptionContainer {
-    width: 90%;
     margin: auto;
+    text-align: center;
 }
 
 .adoptionText {
     font-family: 'Noto Sans', Helvetica, sans-serif;
-    font-size: 70px;
+    font-size: 40px;
     -webkit-appearance: none;
     -moz-appearance: none;
 }

@@ -5,6 +5,7 @@ $(document).ready(function() {
 function playPuppies(puppies) {
     var puppies_seen = [];
     var ask_about_adoption_after_x_puppies = 20;
+
     var keycodes = {
         spacebar: 32,
         left_arrow: 37,
