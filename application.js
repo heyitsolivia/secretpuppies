@@ -4,6 +4,8 @@ $(document).ready(function() {
 
 function playPuppies(puppies) {
     var puppies_seen = [];
+    var ask_about_adoption_after_x_puppies = 20;
+
     var keycodes = {
         spacebar: 32,
         left_arrow: 37,
@@ -22,10 +24,8 @@ function playPuppies(puppies) {
 
     function newPuppy() {
 
-        if (puppies_seen.length == puppies.length) {
-            console.log("Ran out of puppies. What should I do?");
-            var current_pup = puppies_seen[puppies_seen.length - 1];
-            puppies_seen = [current_pup]; // for now reset but don't repeat what we have
+        if (puppies_seen.length == ask_about_adoption_after_x_puppies) {
+            askAboutAdoption();
         }
 
         var newPup = pickUpPuppy();
@@ -37,6 +37,40 @@ function playPuppies(puppies) {
         puppies_seen.push(newPup);
         return  newPup;
 
+    }
+
+    function askAboutAdoption() {
+        // var zipCode = getZipCode();
+        document.getElementById("adoptionInfo").style.visibility = "visible";
+        $("#location").focus();
+        // $("#location").val(zipCode)
+    }
+
+    function getZipCode() {
+        // Programatically get the user's ZIP code
+        if(navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var geocoder = new google.maps.Geocoder();
+                var latlng = new google.maps.LatLng(
+                    position.coords.latitude, position.coords.longitude)
+                geocoder.geocode({'latLng': latlng}, function(results, status) {
+                    var address_components = results[0].address_components
+                    for (i = 0; i < address_components.length; i++) {
+                        if (address_components[i].types.indexOf('postal_code') >= 0) {
+                            return address_components[i].long_name;
+                        }
+                    }
+                });
+            });
+        }
+    }
+
+    function loadPuppy() {
+        var newPup = newPuppy();
+        $('#puppy > source').attr('src', newPup);
+        $('.permalink a').attr('href', newPup);
+        // console.log($('#puppy > source').attr('src'));
+        $('.permalink').load();
     }
 
     function showPuppy(newPup) {
