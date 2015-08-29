@@ -121,6 +121,11 @@ function playPuppies(puppies) {
         }
     });
 
+    // If the user tries reloading to find a new puppy, inform them of the spacebar
+    $(window).bind('beforeunload', function() {
+        return "To see a new puppy, hit the spacebar instead of reloading";
+    });
+
     window.addEventListener('popstate', function(e) {
         if (e.state && e.state.pup) {
             showPuppy(e.state.pup);
