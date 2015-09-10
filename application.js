@@ -6,11 +6,13 @@ function playPuppies(puppies) {
     var puppies_seen = [];
     var ask_about_adoption_after_x_puppies = 20;
 
+    //these are ascii codes!
     var keycodes = {
         spacebar: 32,
         left_arrow: 37,
         right_arrow: 39,
-        k: 75
+        k: 75,
+        p: 80
     }
 
     function pickUpPuppy() {
@@ -116,6 +118,10 @@ function playPuppies(puppies) {
             history.forward();
         } else if (evt.keyCode == keycodes.k) {
             $.getJSON('kittens.json', function(data) {
+              puppies = data;
+            });
+        } else if (evt.keyCode == keycodes.p) {
+            $.getJSON('puppies.json', function(data) {
               puppies = data;
             });
         }
