@@ -73,3 +73,36 @@ video {
 .geomicon:hover {
     fill: #000;
 }
+
+.space {
+    position: absolute;
+    z-index: 100;
+    border: 1px solid #fff;
+    padding: 2px 28px;
+    bottom: 50px;
+    left: calc(50% - 50px);
+    color: #fff;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    opacity: 0.4;
+    border-radius: 2px;
+    -webkit-animation: bounce 300ms infinite alternate;
+    -moz-animation: bounce 300ms infinite alternate;
+    animation: bounce 300ms infinite alternate;
+}
+
+@-webkit-keyframes bounce {
+  0%   { transform: translateY(0); }
+  100%   { transform: translateY(4px); }
+}
+
+@-moz-keyframes bounce {
+  0%   { transform: translateY(0); }
+  100%   { transform: translateY(4px); }
+}
+
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  100%   { transform: translateY(4px); }
+}
